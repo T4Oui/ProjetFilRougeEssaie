@@ -5,61 +5,61 @@
 //creation de l'environnement de travail (dossier)
 
 void crea_dossiers(){
-    system("cd ~; mkdir pfr");
-    system("mkdir ~/pfr/texte");
-    system("mkdir ~/pfr/texte/fich_textes");
-    system("mkdir ~/pfr/texte/clean");
-    system("mkdir ~/pfr/texte/tok");
-    system("mkdir ~/pfr/texte/descripteurs_textes");
-    system("mkdir ~/pfr/texte/recherche_texte");
-    system("mkdir ~/pfr/son");
-    system("mkdir ~/pfr/son/fich_sons");
-    system("mkdir ~/pfr/son/descripteurs_sons");
-    system("mkdir ~/pfr/son/recherche_texte");
-    system("mkdir ~/pfr/image");
-    system("mkdir ~/pfr/image/fich_images/txt");
-    system("mkdir ~/pfr/image/fich_images");
-    system("mkdir ~/pfr/image/descripteurs_images");
-    system("mkdir ~/pfr/image/recherche_texte");
+    system("mkdir /home/pfr/pfr");
+    system("mkdir /home/pfr/pfr/texte");
+    system("mkdir /home/pfr/pfr/texte/fich_textes");
+    system("mkdir /home/pfr/pfr/texte/clean");
+    system("mkdir /home/pfr/pfr/texte/tok");
+    system("mkdir /home/pfr/pfr/texte/descripteurs_textes");
+    system("mkdir /home/pfr/pfr/texte/recherche_texte");
+    system("mkdir /home/pfr/pfr/son");
+    system("mkdir /home/pfr/pfr/son/fich_sons");
+    system("mkdir /home/pfr/pfr/son/descripteurs_sons");
+    system("mkdir /home/pfr/pfr/son/recherche_son");
+    system("mkdir /home/pfr/pfr/image");
+    system("mkdir /home/pfr/pfr/image/fich_images");
+    system("mkdir /home/pfr/pfr/image/fich_images/txt");
+    system("mkdir /home/pfr/pfr/image/descripteurs_images");
+    system("mkdir /home/pfr/pfr/image/recherche_image");
 }
 
 //gestion des fichiers avant l'indexation
 //chemin: chemin du dossier contenant les fichiers pour l'indexation
 void tri_texte(char * chemin){ 
-    char * chaine;
+    char chaine[100];
     FILE * text = fopen("texte.txt","r");
     while(fscanf(text,"%s",chaine)==1){
         char chaine1[256]={0};
-        snprintf(chaine1,256,"cp %s/%s ~/pfr/texte/fich_textes",chemin,chaine);
+        snprintf(chaine1,256,"cp %s/%s /home/pfr/pfr/texte/fich_textes",chemin,chaine);
         system(chaine1);
     }
     fclose(text);
 }
 
 void tri_son(char * chemin){
-    char * chaine;
+    char chaine[100];
     FILE * so = fopen("son.txt","r");
     while(fscanf(so,"%s",chaine)==1){
         char chaine1[256]={0};
-        snprintf(chaine1,256,"cp %s/%s ~/pfr/son/fich_sons",chemin,chaine);
+        snprintf(chaine1,256,"cp %s/%s /home/pfr/pfr/son/fich_sons",chemin,chaine);
         system(chaine1);
     }
     fclose(so);
 }
 
 void tri_image(char * chemin){
-    char * chaine;
+    char chaine[100];
     FILE * imag = fopen("image.txt","r");
     while(fscanf(imag,"%s",chaine)==1){
         char chaine1[256]={0};
-        snprintf(chaine1,256,"cp %s/%s ~/pfr/image/fich_images",chemin,chaine);
+        snprintf(chaine1,256,"cp %s/%s /home/pfr/pfr/image/fich_images",chemin,chaine); //JPG
         system(chaine1);
     }
     fclose(imag);
     imag = fopen("imagetxt.txt","r");
     while(fscanf(imag,"%s",chaine)==1){
         char chaine1[256]={0};
-        snprintf(chaine1,256,"cp %s/%s ~/pfr/image/fich_images/txt",chemin,chaine);
+        snprintf(chaine1,256,"cp %s/%s /home/pfr/pfr/image/fich_images/txt",chemin,chaine); //txt
         system(chaine1);
     }
     fclose(imag);
@@ -82,7 +82,7 @@ void tri_fich(char * chemin){ //tri les fichiers avant l'indexation (son,texte,i
     tri_texte(chemin);
     tri_son(chemin); 
     tri_image(chemin);
-    system("rm texte.txt son.txt image.txt imagetxt.txt");
+    //system("rm texte.txt son.txt image.txt imagetxt.txt");
 }
 
 

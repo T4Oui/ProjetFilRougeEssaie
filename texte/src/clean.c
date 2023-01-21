@@ -76,8 +76,8 @@ void supprNPremLig(int n, char * pathFile){
 // suppression ' et "
 void supprApostrophe(char * pathFile){
     char supprApostrophe[256] = {0}; 
-    system("chmod +x ./src/remove_apostrophe.sh");
-    int ret = snprintf(supprApostrophe, sizeof(supprApostrophe), "./src/remove_apostrophe.sh %sV2.xml", pathFile);
+    system("chmod +x /home/pfr/pfr_code/texte/src/remove_apostrophe.sh");
+    int ret = snprintf(supprApostrophe, sizeof(supprApostrophe), "/home/pfr/pfr_code/texte/src/remove_apostrophe.sh %sV2.xml", pathFile);
     if (ret < 0) {
         abort();
     }

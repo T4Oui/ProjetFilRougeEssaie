@@ -5,5 +5,6 @@
 #include "/home/pfr/pfr_code/include/interface.h"
 
 void main(void){
+    //crea_dossiers();
     interface();
 }

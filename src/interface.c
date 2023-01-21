@@ -122,9 +122,16 @@ void affmodeAdm()
 
 void affconfig()
 {
-    printf("\n  ** Modifier les configurations **\n");
+    int nb_lig;
+    int nb_modif;
+    printf("\n  ** Modifier les configurations **\n\n");
     system("cat /home/pfr/pfr_code/config.txt");
-    printf("\n Que voulez vous modifier ?\n");
+    printf("\n\n Que voulez vous modifier ?\nrentrer le numéro de ligne (début à 1) puis la valeur à mettre à la place\n");
+    scanf("%d",&nb_lig);
+    scanf("%d",&nb_modif);
+
+    printf("\n  ** fichier mofifié **\n");
+    system("cat /home/pfr/pfr_code/config.txt");
 }
 
 void affvisudescripteurs()
@@ -161,8 +168,14 @@ void indexation(){
     printf("\n  ** Indexation **\n Saisir le chemin des fichiers que vous voulez indexer:\n");
     scanf("%s",chemin);
     tri_fich(chemin);
-    //indexation
-    indexation_texte(); //ou est la pile?
+    //indexation texte
+    printf("\n***** indexation texte *****\n");
+    indexation_texte(); //ou est la pile? 
+    //indexation image
+    printf("\n***** indexation image *****\n");
+    indexation_image();
+    //indexation son
+    printf("\n***** indexation son *****\n");
 }
 
 void modeUtil()
