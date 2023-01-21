@@ -1,0 +1,3 @@
+2 : Nombre d'occurence min d'un mot
+
+3 : taille mot min

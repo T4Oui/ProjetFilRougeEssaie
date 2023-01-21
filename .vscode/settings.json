@@ -1,0 +1,14 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "*.tcc": "c",
+        "compare": "c",
+        "cmath": "c",
+        "stdio.h": "c",
+        "pile_dynamique.h": "c",
+        "indexation_texte.h": "c",
+        "descripteur_txt.h": "c",
+        "limits": "c",
+        "tri_fich.h": "c"
+    }
+}
